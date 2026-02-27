@@ -8,7 +8,7 @@ on:
     inputs:
       sdk_version:
         description: "iOS SDK Version"
-        default: "18.6"
+        default: "26.2"
         required: true
         type: string
       decrypted_youtube_url:
@@ -90,7 +90,7 @@ jobs:
         if: steps.SDK.outputs.cache-hit != 'true'
         run: |
           # Only download the specific SDK version
-          git clone -n --depth=1 --filter=tree:0 https://github.com/aricloverEXTRA/sdks/
+          git clone -n --depth=1 --filter=tree:0 https://github.com/xybp888/iOS-SDKs/
           cd sdks
           git sparse-checkout set --no-cone iPhoneOS${{ inputs.sdk_version }}.sdk
           git checkout
